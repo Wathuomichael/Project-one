@@ -1,0 +1,57 @@
+body {
+    text-align: center;
+    background-color: darkslategray;
+    margin-top: auto;
+    position: relative;
+    transform: translate(0%, 30%);
+}
+
+.time {
+    font-size: 10rem;
+}
+
+.greeting {
+    font-size: 3rem;
+}
+
+.create-note {
+    margin: 2%;
+}
+
+.note-input {
+    position: relative;
+    height: 50px;
+    text-align: center;
+    background-color: transparent;
+    color: #eeeeee;
+    outline: none;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: solid #eeeeee 1px;
+    padding: 0px 30px;
+    bottom: 20px;
+    width: 35%;
+    margin-left: 70px;
+}
+
+.add-button {
+    position: relative;
+    width: 2.3rem;
+    height: 2.3rem;
+    margin-left: 25px;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: floralwhite;
+    margin-left: 10px;
+    bottom: 2.5px;
+    top: 2.5px;
+    border-radius: 300px;
+    padding-top: 0px;
+}
+
+.add-button:hover {
+    background-color: #f3f2f233;
+}
