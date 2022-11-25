@@ -1,7 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const { json } = require('body-parser');
 
 const app = express();
 
@@ -53,6 +52,6 @@ app.delete('/:id', async(req, res) => {
     res.end();
 });
 
-app.listen(PORT || 5000, (req, res) => {
+app.listen(PORT, (req, res) => {
     console.log(`Server is running on ${PORT}`);
 });
