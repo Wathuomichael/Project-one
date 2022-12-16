@@ -8,7 +8,9 @@ function Time() {
         setCurrentTime(newTime);
     }
     setInterval(refresh, 1000);
-    return currentTime;
+    return(
+        <div className="time">{currentTime}</div>
+    );
 }
 
 export default Time;

@@ -15,7 +15,9 @@ function Greeting (){
         }
     }
     setTimeout(refresh, 1000); 
-    return message;
+    return (
+        <div className="greeting">{message}</div>
+    );
 }
 
 export default Greeting;

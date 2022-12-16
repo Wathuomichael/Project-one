@@ -6,7 +6,7 @@ function CreateNote (props){
         setNote(event.target.value);
     }
     return (
-    <div>
+    <div className="create-note">
         <input name="note" className="note-input" onChange={onChange} value={note}></input>
         <button className="add-button" onClick={() => {
             props.clicked(note);

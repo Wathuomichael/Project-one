@@ -4,6 +4,7 @@ import Time from './Time';
 import Greeting from './Greeting';
 import CreateNote from './CreateNote';
 import Quote from './Quote';
+import Weather from './Weather';
 import { FaTrashAlt } from 'react-icons/fa'
 
 
@@ -15,10 +16,12 @@ function App() {
   const [image, setImage] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
+
   const client_id = process.env.REACT_APP_CLIENT_ID;
+  const apiNinjasKey = process.env.REACT_APP_API_NINJAS_KEY;
 
   const getNotes = async() => {
-    const response = await axios.get('http://localhost:5000/')
+    const response = await axios.get('http://localhost:5000/');
     setList(() => {
       if(response.data.length > 0) {
         setIsAdded(true);
@@ -47,11 +50,27 @@ function App() {
     setTrigger(!trigger);
   }
 
+
+
   useEffect(() => {
-    axios.get(`https://api.unsplash.com/photos/random?query=scenic&client_id=${client_id}`)
-    .then(response => setImage(response.data.urls.full))
-    .then(() => setIsLoading(false));
+    // axios.get(`https://api.unsplash.com/photos/random?query=scenic&client_id=${client_id}`)
+    // .then(response => setImage(response.data.urls.regular + "&fit=crop&w=1920&h=1080"))
+    // .then(() => setIsLoading(false));
+  //       const options = {
+  //         method: 'GET',
+  //         url: 'https://api.api-ninjas.com/v1/randomimage',
+  //         headers: { 'X-Api-Key': `${apiNinjasKey}`, 'Accept': 'image/jpg'},
+  //       };
+        
+  //       axios.request(options).then(function (response) {
+  //         console.log(response);
+  //         setImage(response.data);
+  //       }).catch(function (error) {
+  //         console.error(error);
+  //       });
   },[]);
+
+  console.log(image);
 
   document.body.style.backgroundImage = `url(${image})`;
 
@@ -65,8 +84,9 @@ function App() {
   } else if(isAdded) {
     return (
       <div className='main'>
-        <div className='time'><Time /></div>
-        <div className='greeting'><Greeting /></div>
+        <Weather />
+        <Time />
+        <Greeting />
         {list.map((item) => {
             return (
               <div className='list' key={item._id}>
@@ -77,16 +97,17 @@ function App() {
               </div>
             );
         })}
-        <div className='quote'><Quote /></div>
+        <Quote />
       </div>
     );
   } else {
       return (
         <div className='main'>
-          <div className='time'><Time /></div>
-          <div className='greeting'><Greeting /></div>
-          <div className='create-note'><CreateNote clicked={addNote}/></div>
-          <div className='quote'><Quote /></div>
+          <Weather />
+          <Time />
+          <Greeting />
+          <CreateNote clicked={addNote}/>
+          <Quote />
         </div>
       );
   }

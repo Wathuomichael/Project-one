@@ -1,7 +1,7 @@
 .main {
     position: relative;
     text-align: center;
-    top: 190px;
+    top: 170px;
     z-index: auto;
     color: #eeeeee;
     font-family: 'Roboto', sans-serif;
@@ -101,7 +101,8 @@
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
     bottom: 0;
-    left: 40%;
+    left: 50%;
+    transform: translate(-50%, -0%);
 }
 
 .quoteauthor {
@@ -110,4 +111,28 @@
 
 .quotetext {
     margin: 5px;
+    width: 800px;
+}
+
+.weather {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    display: inline-block;
+}
+
+.weather-icon {
+    height: 35px;
+    width: 40px;
+}
+
+.temperature {
+    margin: 0;
+    float: right;
+    font-size: 1.5rem;
+}
+
+.city {
+    margin: 0;
+    font-size: 0.6rem;
 }
