@@ -53,21 +53,9 @@ function App() {
 
 
   useEffect(() => {
-    // axios.get(`https://api.unsplash.com/photos/random?query=scenic&client_id=${client_id}`)
-    // .then(response => setImage(response.data.urls.regular + "&fit=crop&w=1920&h=1080"))
-    // .then(() => setIsLoading(false));
-  //       const options = {
-  //         method: 'GET',
-  //         url: 'https://api.api-ninjas.com/v1/randomimage',
-  //         headers: { 'X-Api-Key': `${apiNinjasKey}`, 'Accept': 'image/jpg'},
-  //       };
-        
-  //       axios.request(options).then(function (response) {
-  //         console.log(response);
-  //         setImage(response.data);
-  //       }).catch(function (error) {
-  //         console.error(error);
-  //       });
+    axios.get(`https://api.unsplash.com/photos/random?query=scenic&client_id=${client_id}`)
+    .then(response => setImage(response.data.urls.regular + "&fit=scale&w=1920&h=1000"))
+    .then(() => setIsLoading(false));
   },[]);
 
   console.log(image);
