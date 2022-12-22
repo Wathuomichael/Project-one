@@ -9,7 +9,7 @@
 }
 
 .time {
-    font-size: 10rem;
+    font-size: 8rem;
 }
 
 .greeting {
@@ -48,7 +48,7 @@
     color: floralwhite;
     margin-left: 10px;
     bottom: 2.5px;
-    top: 2.5px;
+    top: 0px;
     border-radius: 30px;
     padding-top: 0px;
 }
@@ -122,7 +122,7 @@
 }
 
 .weather-icon {
-    height: 35px;
+    height: 40px;
     width: 40px;
 }
 
@@ -135,4 +135,82 @@
 .city {
     margin: 0;
     font-size: 0.6rem;
+    position: absolute;
+    right: 10px;
+    top: 35px;
+}
+
+
+.weather-popup-button {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    right: 85px;
+    top: 10px;
+}
+
+.weather-popup {
+    background-color: cornflowerblue;
+    width: 310px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 10px;
+    padding-left: 20px;
+    background-color: rgb(54, 54, 54);
+}
+
+.weather-popup p {
+    margin: 0;
+    flex-direction: column;
+}
+
+.city-popup {
+    position: absolute;
+    top: 15px;
+}
+
+.popup-city-name {
+    float: left;
+}
+
+.edit-city-button {
+    border: none;
+    background-color: transparent;
+    font-size: 0.6rem;
+}
+
+.popup-weather-data {
+    display: flex;
+    flex-direction: row;
+    height: 90px;
+    width: 300px;
+    padding-top: 10px;
+}
+
+.primary-weather-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-popup-icon {
+    height: 60px;
+    width: 60px;
+}
+
+.popup-temperature {
+    font-size: 2rem;
+}
+
+.secondary-weather-data {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 0.85rem;
 }

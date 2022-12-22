@@ -5,7 +5,8 @@ import Greeting from './Greeting';
 import CreateNote from './CreateNote';
 import Quote from './Quote';
 import Weather from './Weather';
-import { FaTrashAlt } from 'react-icons/fa'
+import { FaTrashAlt } from 'react-icons/fa';
+import Background from './Background';
 
 
 function App() {
@@ -13,11 +14,8 @@ function App() {
   const [list, setList] = useState([]);
   const [isAdded, setIsAdded] = useState(false);
   const [trigger, setTrigger] = useState(true);
-  const [image, setImage] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-
-  const client_id = process.env.REACT_APP_CLIENT_ID;
   const apiNinjasKey = process.env.REACT_APP_API_NINJAS_KEY;
 
   const getNotes = async() => {
@@ -51,18 +49,6 @@ function App() {
   }
 
 
-
-  useEffect(() => {
-    axios.get(`https://api.unsplash.com/photos/random?query=scenic&client_id=${client_id}`)
-    .then(response => setImage(response.data.urls.regular + "&fit=scale&w=1920&h=1000"))
-    .then(() => setIsLoading(false));
-  },[]);
-
-  console.log(image);
-
-  document.body.style.backgroundImage = `url(${image})`;
-
-
   if(isLoading) {
     return (
       <div>
@@ -86,6 +72,7 @@ function App() {
             );
         })}
         <Quote />
+        <Background />
       </div>
     );
   } else {
@@ -96,6 +83,7 @@ function App() {
           <Greeting />
           <CreateNote clicked={addNote}/>
           <Quote />
+          <Background />
         </div>
       );
   }
