@@ -10,6 +10,7 @@
 
 .time {
     font-size: 8rem;
+    font-family: 'Arvo', serif;
 }
 
 .greeting {
@@ -140,7 +141,6 @@
     top: 35px;
 }
 
-
 .weather-popup-button {
     background-color: transparent;
     border: none;
@@ -149,8 +149,20 @@
     top: 10px;
 }
 
+.popup {
+    visibility: hidden;
+    border-radius: 30px;
+}
+
+.weather-data:hover + .popup {
+    visibility: visible;
+}
+
+.popup:hover {
+    visibility: visible;
+}
+
 .weather-popup {
-    background-color: cornflowerblue;
     width: 310px;
     height: 120px;
     display: flex;
@@ -159,7 +171,8 @@
     flex-direction: column;
     border-radius: 10px;
     padding-left: 20px;
-    background-color: rgb(54, 54, 54);
+    background-color: rgb(41, 41, 41);
+    opacity: 0.7;
 }
 
 .weather-popup p {
@@ -182,12 +195,23 @@
     font-size: 0.6rem;
 }
 
+.city-input {
+    position: absolute;
+    left: -80px;
+    top: -20px;
+    width: 300px;
+    height: 30px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+}
+
 .popup-weather-data {
     display: flex;
     flex-direction: row;
     height: 90px;
     width: 300px;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 .primary-weather-data {
@@ -213,4 +237,25 @@
     justify-content: center;
     align-items: flex-start;
     font-size: 0.85rem;
+}
+
+.suggestions {
+    background-color: rgb(63, 63, 63);
+    opacity: 0.9;
+    width: 300px;
+    height: 18px;
+    position: relative;
+    left: -80px;
+    top: 10px;
+    font-family: 'Roboto', sans-serif;
+    padding: 3px;
+}
+
+.suggestions p {
+    margin: 0;
+}
+
+.suggestions:hover {
+    cursor: pointer;
+    background-color: rgb(156, 156, 156);
 }
