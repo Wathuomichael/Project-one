@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
+
 function Quote() {
     const [quote, setQuote] = useState({});
     const apiNinjasKey = process.env.REACT_APP_API_NINJAS_KEY;

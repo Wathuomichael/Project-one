@@ -9,6 +9,8 @@ import { FaTrashAlt } from 'react-icons/fa';
 import Background from './Background';
 
 
+
+
 function App() {
 
   const [list, setList] = useState([]);

@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-
-
 function Background() {
     const [image, setImage] = useState({});
     const [isLoading, setIsLoading] = useState(true);
